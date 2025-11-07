@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+        <title>pemesanan tiket film klasik</title>
+        <style>
+            body {
+                font-family: Arial,sans-serif;
+                background: linear-gradient(123deg,#6a11cb,#2575fc);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                color: #fff;
+            }
+            .container {
+                background: rgba(255,255,255, 0. 15);
+                padding: 25px;
+                border-radius: 15px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                width: 320px;
+                text-align: center;
+            }
+            h2 {
+                margin-bottom: 20px;
+                color: #ffeb3b;
+            }
+            label {
+                display: block;
+                margin-top: 10px;
+                text-align: left;
+            }
+            input,select {
+                width: 100%;
+                padding: 10px;
+                border-radius: 8px;
+                border: none;
+                margin-top: 5px;
+                font-size: 15px;
+            }
+            button {
+                background-color: #ffeb3b; 
+                color: #333;  
+                border: none; 
+                border-radius: 8px;
+                padding: 10px;
+                width: 100%;
+                margin-top: 15px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            button:hover {
+                background-color: #ffd600;
+            }
+            .total {
+                margin-top: 15px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="conntainer">
+            <h2>pemesanan tiket film klasik</h2>
+
+            <label for="jumlah">jumlah tiket:</label>
+            <input type="number" id="jumlah"
+            placeholder="masukkan jumlah tiket" min="1">
+
+            <label for="kursi">jenis kursi:</label>
+            <select id="kursi">
+                <option value="50000">Reguler - Rp50.000</option>
+                <option volue="75000">VIP - Rp75.000</option>
+                </select>
+
+                <button onclick="hitungtotal()">pesan & hitung total</button>
+
+                <div class="total" id="hasil">total Biaya:
+                    Rp0</div>
+                    </div>
+
+                    <script>
+                        function hitungtotal() {
+                            const jumlah =
+                            document.getElementById("jumlah").value;
+                            const harga = 
+                            document.getElementById("kursi").value;
+
+                            if (jumlah === ""|| jumlah <= 0) {
+                                alert("masukkan jumlah tiket yang valid!");
+                                return;
+                            }
+                            const total = jumlah * harga;
+
+                            // format ke Rupiah
+                            const formatRupiah = 
+                            total.toLocaleString('id-ID', {
+                                style: 'currency',
+                                currency: 'IDR'
+                            });
+
+
+                            document.getElementById("hasil").innerText = 
+                            "Total Biaya: " + formatRupiah;
+                        }
+                    </script>
+
+                    </body>
+                    </html>
+
+                
+
+
+
+            
+                
+            
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
